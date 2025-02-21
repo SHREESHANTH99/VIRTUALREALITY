@@ -25,10 +25,10 @@
         <div class="box">
         </div>
         <div class="hero">
-            <h1 class="hero-text"></h1> <!-- Typing starts here -->
-            <span></span> <!-- Second text -->
-            <span></span> <!-- Third text -->
-            <span></span> <!-- Fourth text -->
+            <h1 class="hero-text"></h1>
+            <span></span> 
+            <span></span>
+            <span></span> 
             <div class="hero-buttons">
                 <input type="text" placeholder="Email Address">
                 <button class="btn btn-red">Get Started &gt;</button>
@@ -170,7 +170,7 @@
     </footer>
     <script>
             document.addEventListener("DOMContentLoaded", function () {
-                const elements = document.querySelectorAll(".hero-text, .hero span"); // Select all elements to animate
+                const elements = document.querySelectorAll(".hero-text, .hero span");
                 const texts = [
                     "Welcome to My Website!", 
                     "Enjoy big movies, hit series and more from ₹ 149.",
@@ -178,51 +178,50 @@
                     "Ready to watch? Enter your email to create or restart your membership."
                 ];
                 
-                let index = 0; // Track which element is being typed
-                let charIndex = 0; // Track character position in current text
-                let typingSpeed = 50; // Speed of typing (milliseconds)
-                let delayBetweenTexts = 1500; // Pause after each full sentence (milliseconds)
-                let loopRestartDelay = 3000; // Longer pause before restarting loop
-            
+                let index = 0;
+                let charIndex = 0;
+                let typingSpeed = 50;
+                let delayBetweenTexts = 1500;
+                let loopRestartDelay = 3000;
                 function type() {
                     if (index < texts.length) {
                         if (charIndex < texts[index].length) {
-                            elements[index].textContent += texts[index][charIndex]; // Append character
+                            elements[index].textContent += texts[index][charIndex];
                             charIndex++;
-                            setTimeout(type, typingSpeed); // Continue typing
+                            setTimeout(type, typingSpeed); 
                         } else {
-                            elements[index].style.borderRight = "none"; // Remove cursor after typing
-                            index++; // Move to next text
+                            elements[index].style.borderRight = "none";
+                            index++; 
                             charIndex = 0;
-                            setTimeout(type, delayBetweenTexts); // Pause before next text starts typing
+                            setTimeout(type, delayBetweenTexts);
                         }
                     } else {
-                        setTimeout(resetTyping, loopRestartDelay); // Pause before restarting loop
+                        setTimeout(resetTyping, loopRestartDelay);
                     }
                 }
             
                 function resetTyping() {
                     elements.forEach(el => {
-                        el.textContent = ""; // Clear all text
-                        el.style.borderRight = "3px solid white"; // Reset cursor effect
+                        el.textContent = "";
+                        el.style.borderRight = "3px solid white";
                     });
-                    index = 0; // Restart index
+                    index = 0;
                     charIndex = 0;
-                    setTimeout(type, 500); // Restart typing effect
+                    setTimeout(type, 500); 
                 }
             
-                setTimeout(type, 1000); // Start typing after a small delay
+                setTimeout(type, 1000); 
             });
             
             
             
         
             document.addEventListener("DOMContentLoaded", function () {
-                const getStartedButton = document.querySelector(".btn.btn-red"); // Select "Get Started" button
+                const getStartedButton = document.querySelector(".btn.btn-red");
         
                 if (getStartedButton) {
                     getStartedButton.addEventListener("click", function () {
-                        window.location.href = "login.html"; // Redirect to login page
+                        window.location.href = "login.html"; 
                     });
                 }
             });
