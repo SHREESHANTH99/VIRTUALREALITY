@@ -80,7 +80,7 @@ nav button {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid white; /* Blinking cursor */
+    border-right: 3px solid white;
     animation: glowingText 1.5s infinite alternate, blinkCursor 0.7s infinite;
 }
 
