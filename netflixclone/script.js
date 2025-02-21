@@ -1,21 +1,17 @@
-// Select the FAQ section
+
     const faqSection = document.querySelector(".faq");
 
-    // Populate the FAQ section dynamically
     faqData.forEach(item => {
         let faqBox = document.createElement("div");
         faqBox.classList.add("faqbox");
-
-        // Question element
         let question = document.createElement("span");
         question.textContent = item.question;
 
-        // Answer element (Initially hidden)
         let answer = document.createElement("p");
         answer.textContent = item.answer;
-        answer.style.display = "none"; // Initially hidden
+        answer.style.display = "none";
 
-        // Plus/Minus icon
+      
         let icon = document.createElement("svg");
         icon.setAttribute("width", "24");
         icon.setAttribute("height", "24");
@@ -26,7 +22,7 @@
             <path d="M4 12H20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         `;
 
-        // Click event to toggle answer visibility
+       
         faqBox.addEventListener("click", function () {
             if (answer.style.display === "none") {
                 answer.style.display = "block";
@@ -35,7 +31,7 @@
             }
         });
 
-        // Append elements
+        
         faqBox.appendChild(question);
         faqBox.appendChild(icon);
         faqBox.appendChild(answer);
