@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Netflix</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url("https://assets.nflxext.com/ffe/siteui/vlv3/8e6a17e6-2e5d-49de-a85c-87f78e8d4cc8/6c30fc1a-12d7-4183-84b3-9325672cb06a/IN-en-20240129-popsignuptwoweeks-perspective_alpha_website_large.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    color: white;
+}
+
+.login-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+.login-box input::placeholder {
+    color: #bbb;
+}
+
+.btn-red {
+    width: 100%;
+    padding: 12px;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-red:hover {
+    background: #b20710;
+}
+
+.extra-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.extra-options a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.extra-options a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+p a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+small {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Sign In</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Email or phone number" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-red">Sign In</button>
+            </form>
+            <div class="extra-options">
+                <div>
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <a href="#">Need help?</a>
+            </div>
+            <p>New to Netflix? <a href="#">Sign up now</a></p>
+            <small>This page is protected by Google reCAPTCHA to ensure you're not a bot.</small>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+            console.log("Login attempted with:", email);
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
+
