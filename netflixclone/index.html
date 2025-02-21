@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
+    <title>VIRTUAL REALITY – Watch TV Shows Online, Watch Movies Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,8 +27,8 @@
         <div class="hero">
             <h1 class="hero-text"></h1>
             <span></span> 
-            <span></span>
             <span></span> 
+            <span></span>
             <div class="hero-buttons">
                 <input type="text" placeholder="Email Address">
                 <button class="btn btn-red">Get Started &gt;</button>
@@ -101,7 +101,7 @@
     <section class="faq">
         <h2>Frequently Asked Questions</h2>
         <div class="faqbox">
-            <span>What is NetFlix</span>
+            <span>What is VIRTUAL REALITY</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4V20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M4 12H20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -109,7 +109,7 @@
 
         </div>
         <div class="faqbox">
-            <span>How much does Netflix cost?</span>
+            <span>How much does VIRTUAL REALITY cost?</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4V20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M4 12H20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -117,7 +117,7 @@
 
         </div>
         <div class="faqbox">
-            <span>What can I watch on Netflix?</span>
+            <span>What can I watch on VIRTUAL REALITY?</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4V20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M4 12H20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -164,7 +164,7 @@
                 <a href="faq">Contact Us</a>
                 <a href="faq">Speed Test</a> 
                 <a href="faq">Legal Notices</a> 
-                <a href="faq">Only on Netflix</a>
+                <a href="faq">Only on VIRTUAL REALITY</a>
             </div>
         </div>
     </footer>
@@ -179,16 +179,17 @@
                 ];
                 
                 let index = 0;
-                let charIndex = 0;
+                let charIndex = 0; 
                 let typingSpeed = 50;
                 let delayBetweenTexts = 1500;
                 let loopRestartDelay = 3000;
+            
                 function type() {
                     if (index < texts.length) {
                         if (charIndex < texts[index].length) {
-                            elements[index].textContent += texts[index][charIndex];
+                            elements[index].textContent += texts[index][charIndex]; 
                             charIndex++;
-                            setTimeout(type, typingSpeed); 
+                            setTimeout(type, typingSpeed);
                         } else {
                             elements[index].style.borderRight = "none";
                             index++; 
@@ -203,11 +204,11 @@
                 function resetTyping() {
                     elements.forEach(el => {
                         el.textContent = "";
-                        el.style.borderRight = "3px solid white";
+                        el.style.borderRight = "3px solid white"; 
                     });
                     index = 0;
                     charIndex = 0;
-                    setTimeout(type, 500); 
+                    setTimeout(type, 500);
                 }
             
                 setTimeout(type, 1000); 
@@ -217,7 +218,7 @@
             
         
             document.addEventListener("DOMContentLoaded", function () {
-                const getStartedButton = document.querySelector(".btn.btn-red");
+                const getStartedButton = document.querySelector(".btn.btn-red"); 
         
                 if (getStartedButton) {
                     getStartedButton.addEventListener("click", function () {
