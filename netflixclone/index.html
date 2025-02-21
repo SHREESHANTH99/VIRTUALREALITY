@@ -6,6 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIRTUAL REALITY – Watch TV Shows Online, Watch Movies Online</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .faqbox {
+            margin-bottom: 10px;
+        }
+    
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: rgba(255,255,255,0.9);
+            background: #2d2d2d;
+            margin-top: 4px;
+            border-radius: 4px;
+        }
+    
+        .faqbox.active .answer {
+            max-height: 200px;
+            padding: 15px 20px;
+            margin-top: 8px;
+        }
+    
+        .faqbox.active svg {
+            transform: rotate(45deg);
+        }
+    
+        .faqbox svg {
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -100,39 +130,36 @@
 
     <section class="faq">
         <h2>Frequently Asked Questions</h2>
+        
         <div class="faqbox">
-            <span>What is VIRTUAL REALITY</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4V20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4 12H20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
+            <div class="question">
+                <span>What is VIRTUAL REALITY</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 12H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                VIRTUAL REALITY is a streaming service that offers a wide variety of award-winning TV shows, movies, 
+                anime, documentaries, and more on thousands of internet-connected devices.
+            </div>
         </div>
+    
         <div class="faqbox">
-            <span>How much does VIRTUAL REALITY cost?</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4V20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4 12H20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-        </div>
-        <div class="faqbox">
-            <span>What can I watch on VIRTUAL REALITY?</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4V20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4 12H20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-        </div>
-        <div class="faqbox">
-            <span>Where can I watch?</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4V20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4 12H20" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
+            <div class="question">
+                <span>How much does VIRTUAL REALITY cost?</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 12H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                Watch VIRTUAL REALITY on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one 
+                fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.
+            </div>
         </div>
     </section>
+    
     <div class="separation"></div>
 
     <footer>
@@ -169,6 +196,26 @@
         </div>
     </footer>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqBoxes = document.querySelectorAll('.faqbox');
+        
+            faqBoxes.forEach(box => {
+                const question = box.querySelector('.question');
+                question.addEventListener('click', function() {
+                    faqBoxes.forEach(otherBox => {
+                        if (otherBox !== box) {
+                            otherBox.classList.remove('active');
+                        }
+                    });
+                    box.classList.toggle('active');
+                });
+            });
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.faqbox')) {
+                    faqBoxes.forEach(box => box.classList.remove('active'));
+                }
+            });
+        });
             document.addEventListener("DOMContentLoaded", function () {
                 const elements = document.querySelectorAll(".hero-text, .hero span");
                 const texts = [
